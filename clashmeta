@@ -209,7 +209,7 @@ rules:
 - RULE-SET,telegramcidr,PROXY
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
-- MATCH,PROXY
+- MATCH,DIRECT
 rule-providers:
   reject:
     type: http
