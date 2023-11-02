@@ -159,8 +159,6 @@ proxy-groups:
   proxies:
   - 自动选择
   - vless-vision
-  - bulink自建免费11线 三网
-  - bulink自建免费16线 三网
   - DIRECT
 - name: 自动选择
   proxies:
