@@ -128,8 +128,6 @@ proxies:
   tls: true
   servername: proxy.goodbye360.com
   network: tcp
-- {name: bulink自建免费11线 三网, server: la56.burstlinker.com.fobzs.com, port: 443, type: vmess, uuid: b7a912b9-7c65-4bbd-8759-d79adfe6255d, alterId: 0, cipher: auto, tls: true, network: ws, ws-opts: {path: /ws, headers: {Host: la56.burstlinker.com.fobzs.com}}}
-- {name: bulink自建免费16线 三网, server: fob60.us.bulinkxyz.xyz, port: 35038, type: vmess, uuid: b7a912b9-7c65-4bbd-8759-d79adfe6255d, alterId: 0, cipher: auto, tls: true, network: ws, ws-opts: {path: /bulink, headers: {Host: fob60.us.bulinkxyz.xyz}}}
 - name: trojan
   type: trojan
   server: proxy.goodbye360.com
@@ -163,8 +161,6 @@ proxy-groups:
 - name: 自动选择
   proxies:
   - vless-vision
-  - bulink自建免费11线 三网
-  - bulink自建免费16线 三网
   tolerance: 1
   type: url-test
   use:
