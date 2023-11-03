@@ -155,14 +155,20 @@ proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - 自动选择
-  - vless-vision
+  - url-test
   - DIRECT
-- name: 自动选择
+- name: url-test
+  type: url-test
   proxies:
   - vless-vision
+  - vless-tcp
+  - vmess
+  - trojan
+  - vless-reality-vision
+  - fallback
   tolerance: 1
-  type: url-test
+- name: fallback
+  type: fallback
   use:
   - provider1
   - provider2
