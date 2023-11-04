@@ -154,18 +154,17 @@ proxies:
     short-id: 8521c25b
 proxy-groups:
 - name: PROXY
-  type: select
+  type: fallback
   proxies:
   - url-test
-  - DIRECT
-- name: url-test
-  type: url-test
-  proxies:
   - vless-vision
   - vless-tcp
   - vmess
   - trojan
   - vless-reality-vision
+  - DIRECT
+- name: 订阅
+  type: url-test
   use:
   - provider1
   - provider2
