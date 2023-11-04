@@ -156,14 +156,14 @@ proxy-groups:
 - name: PROXY
   type: fallback
   proxies:
-  - url-test
+  - 白嫖
   - vless-vision
   - vless-tcp
   - vmess
   - trojan
   - vless-reality-vision
   - DIRECT
-- name: 订阅
+- name: 白嫖
   type: url-test
   use:
   - provider1
