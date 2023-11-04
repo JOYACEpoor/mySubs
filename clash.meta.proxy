@@ -166,15 +166,12 @@ proxy-groups:
   - vmess
   - trojan
   - vless-reality-vision
-  - fallback
-  tolerance: 1
-- name: fallback
-  type: fallback
   use:
   - provider1
   - provider2
   - provider3
   - provider4
+  tolerance: 1
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
