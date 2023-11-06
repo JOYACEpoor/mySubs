@@ -162,15 +162,19 @@ proxy-groups:
   - provider2
   - provider3
   - provider4
+  - DIRECT
 - name: "自动选择"
+  type: fallback
+  proxies:
+  - "当前节点"
+  - DIRECT
+- name: "当前节点"
   type: url-test
   use:
   - provider1
   - provider2
   - provider3
   - provider4
-  proxies:
-  - DIRECT
   tolerance: 1
 proxy-providers:
   provider1:
