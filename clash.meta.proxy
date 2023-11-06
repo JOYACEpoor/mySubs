@@ -5,6 +5,8 @@ log-level: info
 ipv6: true
 secret: ''
 external-controller: 0.0.0.0:9090
+external-ui: ./ui
+
 dns:
   enable: true
   listen: :1053
@@ -69,6 +71,7 @@ dns:
   - https://dnsforge.de/dns-query
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
+
 tun:
   enable: true
   stack: system
@@ -76,10 +79,11 @@ tun:
   - any:53
   auto-route: true
   auto-detect-interface: true
+
 profile:
   store-selected: true
   store-fake-ip: true
-external-ui: ./ui
+
 sniffer:
   enable: true
   sniff:
@@ -92,66 +96,18 @@ sniffer:
       - 80
       - 8080-8880
       override-destination: true
+
 geox-url:
   geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
   geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
   mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+
 geodata-mode: true
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
 global-client-fingerprint: random
-proxies:
-- name: vless-vision
-  type: vless
-  server: proxy.goodbye360.com
-  port: 2053
-  uuid: 21ad45b5-367a-46e8-ba59-cdc606ea2b72
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-- name: vless-tcp
-  type: vless
-  server: proxy.goodbye360.com
-  port: 2083
-  uuid: 21ad45b5-367a-46e8-ba59-cdc606ea2b72
-  network: tcp
-  servername: proxy.goodbye360.com
-- name: vmess
-  type: vmess
-  server: proxy.goodbye360.com
-  port: 2087
-  uuid: 21ad45b5-367a-46e8-ba59-cdc606ea2b72
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  servername: proxy.goodbye360.com
-  network: tcp
-- name: trojan
-  type: trojan
-  server: proxy.goodbye360.com
-  port: 2096
-  password: WGWvMHKxSL
-  udp: true
-  sni: proxy.goodbye360.com
-  alpn:
-  - h2
-  - http/1.1
-- name: vless-reality-vision
-  type: vless
-  server: proxy.goodbye360.com
-  port: 8443
-  uuid: 21ad45b5-367a-46e8-ba59-cdc606ea2b72
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: TrwrdXI9eAj0fT-Faq3llpLOyKu9-9T7LWfjDD9wOjQ
-    short-id: 8521c25b
+
 proxy-groups:
 - name: PROXY
   type: select
@@ -176,6 +132,7 @@ proxy-groups:
   - provider3
   - provider4
   tolerance: 1
+
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
@@ -209,6 +166,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
+
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,applications,DIRECT
@@ -228,6 +186,7 @@ rules:
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
 - MATCH,PROXY
+
 rule-providers:
   reject:
     type: http
