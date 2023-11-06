@@ -157,12 +157,12 @@ proxy-groups:
   type: select
   proxies:
   - "自动选择"
+  - DIRECT
   use:
   - provider1
   - provider2
   - provider3
   - provider4
-  - DIRECT
 - name: "自动选择"
   type: fallback
   proxies:
