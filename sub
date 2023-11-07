@@ -1,1 +1,2 @@
+vless://e2f57960-9dd5-4b50-93b2-d9db57fc7597@proxy.goodbye360.com:2053?type=tcp&security=tls&fp=random&alpn=http%2F1.1%2Ch2%2Ch3&sni=proxy.goodbye360.com&flow=xtls-rprx-vision#oe0z7i3n
 hysteria://proxy.goodbye360.com:8443?mport=10000-65535&protocol=udp&auth=&obfsParam=rfHuBh0knOKnRAz1xtpwxyZ1SQxoVEi3Jf0fD4lJ3uPgCxYOVE&peer=proxy.goodbye360.com&insecure=0&upmbps=11&downmbps=55&alpn=h3#Hys-proxy.goodbye360.com
