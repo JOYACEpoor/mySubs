@@ -135,7 +135,6 @@ proxy-groups:
   - provider4
   url: 'https://cp.cloudflare.com/generate_204'
   interval: 60
-  tolerance: 1
 
 proxy-providers:
   provider1:
