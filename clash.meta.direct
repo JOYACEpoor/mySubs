@@ -126,6 +126,7 @@ proxy-groups:
   - provider3
   - provider4
   url: https://www.apple.com/library/test/success.html
+  interval: 60
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
