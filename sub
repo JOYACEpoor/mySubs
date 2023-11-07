@@ -1,1 +1,1 @@
-hysteria://proxy.goodbye360.com:8443?protocol=wechat-video&auth=&obfsParam=JexM7dzYgVMgCJGxMJawoYtrdbmFw8wClzn8CDesD14Rh2yxB4&peer=proxy.goodbye360.com&insecure=0&upmbps=11&downmbps=55&alpn=h3#Hys-proxy.goodbye360.com
+hysteria://proxy.goodbye360.com:8443?mport=10000-65535&protocol=udp&auth=&obfsParam=rfHuBh0knOKnRAz1xtpwxyZ1SQxoVEi3Jf0fD4lJ3uPgCxYOVE&peer=proxy.goodbye360.com&insecure=0&upmbps=11&downmbps=55&alpn=h3#Hys-proxy.goodbye360.com
