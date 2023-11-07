@@ -5,8 +5,6 @@ log-level: info
 ipv6: true
 secret: ''
 external-controller: 0.0.0.0:9090
-external-ui: ./ui
-
 dns:
   enable: true
   listen: :1053
@@ -71,7 +69,6 @@ dns:
   - https://dnsforge.de/dns-query
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
-
 tun:
   enable: true
   stack: system
@@ -79,11 +76,10 @@ tun:
   - any:53
   auto-route: true
   auto-detect-interface: true
-
 profile:
   store-selected: true
   store-fake-ip: true
-
+external-ui: ./ui
 sniffer:
   enable: true
   sniff:
@@ -96,44 +92,40 @@ sniffer:
       - 80
       - 8080-8880
       override-destination: true
-
 geox-url:
   geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
   geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
   mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
-
 geodata-mode: true
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
 global-client-fingerprint: random
-
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - "自动选择"
+  - 自动选择
   - DIRECT
   use:
   - provider1
   - provider2
   - provider3
   - provider4
-- name: "自动选择"
+- name: 自动选择
   type: fallback
   proxies:
-  - "当前节点"
+  - 当前节点
   - DIRECT
-  url: 'https://www.apple.com/library/test/success.html'
-- name: "当前节点"
+  url: https://www.apple.com/library/test/success.html
+- name: 当前节点
   type: url-test
   use:
   - provider1
   - provider2
   - provider3
   - provider4
-  url: 'https://www.apple.com/library/test/success.html'
-
+  url: https://www.apple.com/library/test/success.html
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
@@ -167,7 +159,6 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,applications,DIRECT
@@ -187,7 +178,6 @@ rules:
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
 - MATCH,DIRECT
-
 rule-providers:
   reject:
     type: http
