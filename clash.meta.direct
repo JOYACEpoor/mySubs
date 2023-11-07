@@ -113,12 +113,6 @@ proxy-groups:
   - provider3
   - provider4
 - name: 自动选择
-  type: fallback
-  proxies:
-  - 当前节点
-  - DIRECT
-  url: https://www.apple.com/library/test/success.html
-- name: 当前节点
   type: url-test
   use:
   - provider1
