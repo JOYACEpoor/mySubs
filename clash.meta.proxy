@@ -124,8 +124,7 @@ proxy-groups:
   proxies:
   - "当前节点"
   - DIRECT
-  url: 'https://cp.cloudflare.com/generate_204'
-  interval: 60
+  url: 'https://www.apple.com/library/test/success.html'
 - name: "当前节点"
   type: url-test
   use:
@@ -133,8 +132,7 @@ proxy-groups:
   - provider2
   - provider3
   - provider4
-  url: 'https://cp.cloudflare.com/generate_204'
-  interval: 3600
+  url: 'https://www.apple.com/library/test/success.html'
 
 proxy-providers:
   provider1:
