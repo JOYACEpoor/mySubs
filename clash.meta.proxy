@@ -113,12 +113,19 @@ proxy-groups:
   - provider3
   - provider4
 - name: 自动选择
+  type: fallback
+  proxies:
+  - 免费节点
+  use:
+  - provider4
+  url: https://www.gstatic.com/generate_204
+  interval: 60
+- name: 免费节点
   type: url-test
   use:
   - provider1
   - provider2
   - provider3
-  - provider4
   url: https://www.gstatic.com/generate_204
   interval: 60
 proxy-providers:
