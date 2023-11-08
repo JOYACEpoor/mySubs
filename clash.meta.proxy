@@ -106,7 +106,6 @@ proxy-groups:
   type: select
   proxies:
   - 免费节点
-  - 自动选择
   - DIRECT
   use:
   - provider4
@@ -116,14 +115,6 @@ proxy-groups:
   - provider1
   - provider2
   - provider3
-  url: https://www.gstatic.com/generate_204
-  interval: 60
-- name: 自动选择
-  type: fallback
-  proxies:
-  - 免费节点
-  use:
-  - provider4
   url: https://www.gstatic.com/generate_204
   interval: 60
 proxy-providers:
@@ -177,7 +168,7 @@ rules:
 - RULE-SET,telegramcidr,PROXY
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
-- MATCH,PROXY
+- MATCH,DIRECT
 rule-providers:
   reject:
     type: http
