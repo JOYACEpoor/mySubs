@@ -105,16 +105,32 @@ proxy-groups:
 - name: PROXY
   type: select
   proxies:
+  - 免费优先
+  - 付费优先
+- name: 免费优先
+  type: fallback
+  proxies:
+  - 免费节点
+  - 付费节点
+  - DIRECT
+- name: 付费优先
+  type: fallback
+  proxies:
+  - 付费节点
   - 免费节点
   - DIRECT
-  use:
-  - provider4
 - name: 免费节点
   type: url-test
   use:
   - provider1
   - provider2
   - provider3
+  url: https://www.gstatic.com/generate_204
+  interval: 60
+- name: 付费节点
+  type: url-test
+  use:
+  - provider4
   url: https://www.gstatic.com/generate_204
   interval: 60
 proxy-providers:
