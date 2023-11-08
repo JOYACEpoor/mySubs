@@ -108,9 +108,6 @@ proxy-groups:
   - 自动选择
   - DIRECT
   use:
-  - provider1
-  - provider2
-  - provider3
   - provider4
 - name: 自动选择
   type: fallback
