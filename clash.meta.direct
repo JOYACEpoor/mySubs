@@ -107,6 +107,7 @@ proxy-groups:
   proxies:
   - 免费优先
   - 付费优先
+  - DIRECT
 - name: 免费优先
   type: fallback
   proxies:
