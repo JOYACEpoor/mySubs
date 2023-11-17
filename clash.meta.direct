@@ -1,4 +1,6 @@
 mode: rule
+socks-port: 10808
+port: 10809
 mixed-port: 10810
 allow-lan: true
 log-level: info
