@@ -105,27 +105,11 @@ find-process-mode: strict
 global-client-fingerprint: random
 proxy-groups:
 - name: PROXY
-  type: select
-  proxies:
-  - 免费优先
-  - 付费优先
-  - DIRECT
-- name: 免费优先
   type: fallback
   proxies:
   - 免费节点
   - 付费节点
   - DIRECT
-  url: https://www.gstatic.com/generate_204
-  interval: 60
-- name: 付费优先
-  type: fallback
-  proxies:
-  - 付费节点
-  - 免费节点
-  - DIRECT
-  url: https://www.gstatic.com/generate_204
-  interval: 60
 - name: 免费节点
   type: url-test
   use:
@@ -191,7 +175,7 @@ rules:
 - RULE-SET,telegramcidr,PROXY
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
-- MATCH,PROXY
+- MATCH,DIRECT
 rule-providers:
   reject:
     type: http
