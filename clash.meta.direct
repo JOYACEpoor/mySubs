@@ -105,7 +105,7 @@ find-process-mode: strict
 global-client-fingerprint: random
 proxy-groups:
 - name: PROXY
-  type: select
+  type: fallback
   proxies:
   - 免费节点
   - 付费节点
