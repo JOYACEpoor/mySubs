@@ -2,6 +2,7 @@ mode: rule
 socks-port: 10808
 port: 10809
 mixed-port: 10810
+redir-port: 10811
 allow-lan: true
 log-level: info
 ipv6: true
