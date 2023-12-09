@@ -157,7 +157,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
   provider3:
-    url: https://bulink.me/sub/gy5zbk/vm
+    url: https://raw.githubusercontent.com/freefq/free/master/v2
     type: http
     interval: 3600
     health-check:
