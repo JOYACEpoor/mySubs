@@ -136,7 +136,7 @@ proxy-groups:
   url: https://www.gstatic.com/generate_204
   interval: 60
 - name: 付费节点
-  type: fallback
+  type: url-test
   use:
   - provider4
   url: https://www.gstatic.com/generate_204
