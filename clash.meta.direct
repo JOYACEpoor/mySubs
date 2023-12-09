@@ -167,7 +167,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
   provider4:
-    url: https://www.goodbye360.com/sub
+    url: https://cf.goodbye360.com/sub
     type: http
     interval: 3600
     health-check:
