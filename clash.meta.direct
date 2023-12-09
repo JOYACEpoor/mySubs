@@ -116,7 +116,6 @@ proxy-groups:
   proxies:
   - 免费节点
   - 付费节点
-  - DIRECT
   url: https://www.gstatic.com/generate_204
   interval: 60
 - name: 付费优先
@@ -124,7 +123,6 @@ proxy-groups:
   proxies:
   - 付费节点
   - 免费节点
-  - DIRECT
   url: https://www.gstatic.com/generate_204
   interval: 60
 - name: 免费节点
