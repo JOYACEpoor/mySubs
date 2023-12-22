@@ -8,6 +8,7 @@ log-level: info
 ipv6: true
 secret: ''
 external-controller: 0.0.0.0:9090
+keep-alive-interval: 1
 dns:
   enable: true
   listen: :1053
