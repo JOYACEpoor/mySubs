@@ -7,8 +7,7 @@ allow-lan: true
 log-level: info
 ipv6: true
 secret: ''
-external-controller: 0.0.0.0:9090
-keep-alive-interval: 1
+
 dns:
   enable: true
   listen: :1053
@@ -74,6 +73,7 @@ dns:
   - https://dnsforge.de/dns-query
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
+
 tun:
   enable: true
   stack: system
@@ -81,10 +81,11 @@ tun:
   - any:53
   auto-route: true
   auto-detect-interface: true
+
 profile:
   store-selected: true
   store-fake-ip: true
-external-ui: ./ui
+
 sniffer:
   enable: true
   sniff:
@@ -97,15 +98,27 @@ sniffer:
       - 80
       - 8080-8880
       override-destination: true
+
+geodata-mode: true
+geodata-loader: memconservative
+geo-auto-update: true
+geo-update-interval: 24
 geox-url:
   geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
   geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
   mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
-geodata-mode: true
+global-ua: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
 global-client-fingerprint: random
+external-ui: ./ui
+external-controller: 0.0.0.0:9090
+keep-alive-interval: 1
+external-ui-name: xd
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+
 proxy-groups:
 - name: PROXY
   type: select
@@ -142,6 +155,7 @@ proxy-groups:
   - provider5
   url: https://www.gstatic.com/generate_204
   interval: 60
+
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
@@ -183,6 +197,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
+
 rules:
 - RULE-SET,reject,REJECT
 - RULE-SET,applications,DIRECT
@@ -202,6 +217,7 @@ rules:
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
 - MATCH,DIRECT
+
 rule-providers:
   reject:
     type: http
