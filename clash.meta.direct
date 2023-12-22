@@ -7,6 +7,24 @@ allow-lan: true
 log-level: info
 ipv6: true
 secret: ''
+geodata-mode: true
+geodata-loader: memconservative
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+global-ua: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: random
+external-ui: ./ui
+external-controller: 0.0.0.0:9090
+keep-alive-interval: 1
+external-ui-name: xd
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
 
 dns:
   enable: true
@@ -76,7 +94,7 @@ dns:
 
 tun:
   enable: true
-  stack: system
+  stack: mixed
   dns-hijack:
   - any:53
   auto-route: true
@@ -88,6 +106,8 @@ profile:
 
 sniffer:
   enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
   sniff:
     TLS:
       ports:
@@ -98,26 +118,6 @@ sniffer:
       - 80
       - 8080-8880
       override-destination: true
-
-geodata-mode: true
-geodata-loader: memconservative
-geo-auto-update: true
-geo-update-interval: 24
-geox-url:
-  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
-  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
-  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
-global-ua: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-unified-delay: true
-tcp-concurrent: true
-find-process-mode: strict
-global-client-fingerprint: random
-external-ui: ./ui
-external-controller: 0.0.0.0:9090
-keep-alive-interval: 1
-external-ui-name: xd
-external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
 
 proxy-groups:
 - name: PROXY
