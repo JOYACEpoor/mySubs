@@ -19,7 +19,7 @@ global-ua: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: strict
-global-client-fingerprint: random
+global-client-fingerprint: chrome
 external-ui: ./ui
 external-controller: 0.0.0.0:9090
 keep-alive-interval: 1
@@ -31,7 +31,7 @@ dns:
   listen: :1053
   ipv6: true
   prefer-h3: true
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter:
   - '*'
@@ -108,6 +108,7 @@ sniffer:
   enable: true
   force-dns-mapping: true
   parse-pure-ip: true
+  override-destination: true
   sniff:
     TLS:
       ports:
@@ -117,7 +118,6 @@ sniffer:
       ports:
       - 80
       - 8080-8880
-      override-destination: true
 
 proxy-groups:
 - name: PROXY
