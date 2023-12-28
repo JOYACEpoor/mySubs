@@ -149,6 +149,7 @@ proxy-groups:
   - provider4
   url: https://www.gstatic.com/generate_204
   interval: 60
+  strategy: round-robin
 - name: 付费节点
   type: fallback
   use:
