@@ -141,7 +141,7 @@ proxy-groups:
   url: https://www.gstatic.com/generate_204
   interval: 60
 - name: 免费节点
-  type: load-balance
+  type: url-test
   use:
   - provider1
   - provider2
@@ -149,7 +149,6 @@ proxy-groups:
   - provider4
   url: https://www.gstatic.com/generate_204
   interval: 60
-  strategy: round-robin
 - name: 付费节点
   type: fallback
   use:
