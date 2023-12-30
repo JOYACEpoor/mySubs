@@ -138,7 +138,7 @@ proxy-groups:
   proxies:
   - 付费节点
   - 免费节点
-  url: https://www.gstatic.com/generate_204 
+  url: https://www.gstatic.com/generate_204
   interval: 70
 - name: 免费节点
   type: url-test
@@ -216,7 +216,7 @@ rules:
 - RULE-SET,telegramcidr,PROXY
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
-- MATCH,DIRECT
+- MATCH,DIRECT 
 
 rule-providers:
   reject:
