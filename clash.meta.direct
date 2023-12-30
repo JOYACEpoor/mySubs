@@ -132,14 +132,14 @@ proxy-groups:
   - 免费节点
   - 付费节点
   url: https://www.gstatic.com/generate_204
-  interval: 61
+  interval: 70
 - name: 付费优先
   type: fallback
   proxies:
   - 付费节点
   - 免费节点
   url: https://www.gstatic.com/generate_204 
-  interval: 61
+  interval: 70
 - name: 免费节点
   type: url-test
   use:
