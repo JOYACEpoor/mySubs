@@ -131,11 +131,15 @@ proxy-groups:
   proxies:
   - 免费节点
   - 付费节点
+  url: https://www.gstatic.com/generate_204
+  interval: 61
 - name: 付费优先
   type: fallback
   proxies:
   - 付费节点
   - 免费节点
+  url: https://www.gstatic.com/generate_204 
+  interval: 61
 - name: 免费节点
   type: url-test
   use:
@@ -143,10 +147,14 @@ proxy-groups:
   - provider2
   - provider3
   - provider4
+  url: https://www.gstatic.com/generate_204
+  interval: 60
 - name: 付费节点
   type: fallback
   use:
   - provider5
+  url: https://www.gstatic.com/generate_204
+  interval: 60
 
 proxy-providers:
   provider1:
