@@ -131,14 +131,14 @@ proxy-groups:
   proxies:
   - 免费节点
   - 付费节点
-  url: https://www.gstatic.com/generate_204
+  url: https://cp.cloudflare.com/generate_204
   interval: 70
 - name: 付费优先
   type: fallback
   proxies:
   - 付费节点
   - 免费节点
-  url: https://www.gstatic.com/generate_204
+  url: https://cp.cloudflare.com/generate_204
   interval: 70
 - name: 免费节点
   type: url-test
@@ -147,13 +147,13 @@ proxy-groups:
   - provider2
   - provider3
   - provider4
-  url: https://www.gstatic.com/generate_204
+  url: https://cp.cloudflare.com/generate_204
   interval: 60
 - name: 付费节点
   type: fallback
   use:
   - provider5
-  url: https://www.gstatic.com/generate_204
+  url: https://cp.cloudflare.com/generate_204
   interval: 60
 
 proxy-providers:
@@ -163,7 +163,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider2:
     url: https://raw.fgit.cf/xiyaowong/freeFQ/main/v2ray
@@ -171,7 +171,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider3:
     url: https://raw.fgit.cf/freefq/free/master/v2
@@ -179,7 +179,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider4:
     url: https://raw.fgit.cf/Pawdroid/Free-servers/main/sub
@@ -187,7 +187,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider5:
     url: https://cf.goodbye360.com/sub
@@ -195,7 +195,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
       interval: 300
 
 rules:
