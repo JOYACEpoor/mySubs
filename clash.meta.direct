@@ -182,6 +182,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
 rules:
+- PROCESS-NAME,steam,DIRECT
 - PROCESS-NAME,steam.exe,DIRECT
 - RULE-SET,reject,REJECT
 - RULE-SET,applications,DIRECT
