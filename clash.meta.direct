@@ -42,7 +42,6 @@ sniffer:
 
 tun:
   enable: true
-  device: tun0
   stack: mixed
   dns-hijack:
     - 'any:53'
