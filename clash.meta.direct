@@ -1,9 +1,55 @@
-mode: rule
 mixed-port: 10810
+redir-port: 10811
+tproxy-port: 1536
 allow-lan: true
-log-level: info
-secret: ''
+mode: Rule
+geodata-mode: true
+unified-delay: true
+log-level: silent
+ipv6: true
 external-controller: 0.0.0.0:9090
+external-ui: ./dashboard/Yacd
+secret: ""
+tcp-concurrent: true
+enable-process: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+geox-url:
+  geoip: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
+  mmdb: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/country.mmdb"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+
+tun:
+  enable: true
+  device: tun0
+  stack: mixed
+  dns-hijack:
+    - 'any:53'
+    - 'tcp://any:53'
+  auto-route: true
+  auto-detect-interface: true
+
 dns:
   enable: true
   listen: :1053
@@ -69,41 +115,7 @@ dns:
   - https://dnsforge.de/dns-query
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
-tun:
-  enable: true
-  stack: mixed
-  dns-hijack:
-  - any:53
-  auto-route: true
-  auto-detect-interface: true
-profile:
-  store-selected: true
-  store-fake-ip: true
-redir-port: 10811
-external-ui: ./ui
-sniffer:
-  enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
-  override-destination: true
-  sniff:
-    TLS:
-      ports:
-      - 443
-      - 8443
-    HTTP:
-      ports:
-      - 80
-      - 8080-8880
-geox-url:
-  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
-  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
-  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
-geodata-mode: true
-unified-delay: true
-tcp-concurrent: true
-find-process-mode: strict
-global-client-fingerprint: chrome
+
 proxy-groups:
 - name: PROXY
   type: select
@@ -140,6 +152,7 @@ proxy-groups:
   - provider5
   url: https://cp.cloudflare.com/generate_204
   interval: 60
+
 proxy-providers:
   provider1:
     url: https://jiang.netlify.app
@@ -181,6 +194,7 @@ proxy-providers:
       enable: true
       url: https://cp.cloudflare.com/generate_204
       interval: 300
+
 rules:
 - PROCESS-NAME,steam,DIRECT
 - PROCESS-NAME,steam.exe,DIRECT
@@ -202,6 +216,7 @@ rules:
 - RULE-SET,tld-not-cn,PROXY
 - RULE-SET,gfw,PROXY
 - MATCH,DIRECT
+
 rule-providers:
   reject:
     type: http
