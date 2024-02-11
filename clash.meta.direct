@@ -162,7 +162,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider2:
-    url: https://raw.fgit.cf/xiyaowong/freeFQ/main/v2ray
+    url: https://raw.githubusercontent.com/xiyaowong/freeFQ/main/v2ray
     type: http
     interval: 3600
     health-check:
@@ -170,7 +170,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider3:
-    url: https://raw.fgit.cf/freefq/free/master/v2
+    url: https://raw.githubusercontent.com/freefq/free/master/v2
     type: http
     interval: 3600
     health-check:
@@ -178,7 +178,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider4:
-    url: https://raw.fgit.cf/Pawdroid/Free-servers/main/sub
+    url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
     type: http
     interval: 3600
     health-check:
