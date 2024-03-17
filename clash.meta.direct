@@ -116,6 +116,20 @@ dns:
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
 
+proxies:
+- name: "hysteria2"
+  type: hysteria2
+  server: www.goodbye360.com
+  ports: 20000-50000/443
+  up: "30 Mbps" # 若不写单位，默认为 Mbps
+  down: "300 Mbps" # 若不写单位，默认为 Mbps
+  password: bSKC3AprmOK+7gZ3gsXvAXIe
+  sni: www.goodbye360.com
+  skip-cert-verify: false
+  fingerprint: chrome
+  alpn:
+    - h3
+
 proxy-groups:
 - name: PROXY
   type: select
@@ -154,20 +168,6 @@ proxy-groups:
   - provider5
   url: https://cp.cloudflare.com/generate_204
   interval: 60
-
-proxies:
-- name: "hysteria2"
-  type: hysteria2
-  server: www.goodbye360.com
-  ports: 20000-50000/443
-  up: "30 Mbps" # 若不写单位，默认为 Mbps
-  down: "300 Mbps" # 若不写单位，默认为 Mbps
-  password: bSKC3AprmOK+7gZ3gsXvAXIe
-  sni: www.goodbye360.com
-  skip-cert-verify: false
-  fingerprint: chrome
-  alpn:
-    - h3
 
 proxy-providers:
   provider1:
