@@ -120,7 +120,8 @@ proxies:
 - name: "hysteria2"
   type: hysteria2
   server: www.goodbye360.com
-  ports: 20000-50000/443
+  port: 8443
+  ports: 20000-50000/8443
   up: "30 Mbps" # 若不写单位，默认为 Mbps
   down: "300 Mbps" # 若不写单位，默认为 Mbps
   password: bSKC3AprmOK+7gZ3gsXvAXIe
