@@ -1,3 +1,5 @@
+socks-port: 10808
+port: 10809
 mixed-port: 10810
 redir-port: 10811
 tproxy-port: 1536
@@ -117,7 +119,7 @@ dns:
   - https://doh.mullvad.net/dns-query
 
 proxies:
-- name: "hysteria2"
+- name: "special"
   type: hysteria2
   server: www.goodbye360.com
   port: 8443
@@ -125,11 +127,6 @@ proxies:
   up: "30 Mbps" # 若不写单位，默认为 Mbps
   down: "300 Mbps" # 若不写单位，默认为 Mbps
   password: bSKC3AprmOK+7gZ3gsXvAXIe
-  sni: www.goodbye360.com
-  skip-cert-verify: false
-  fingerprint: chrome
-  alpn:
-    - h3
 
 proxy-groups:
 - name: PROXY
@@ -164,7 +161,7 @@ proxy-groups:
 - name: 付费节点
   type: fallback
   proxies:
-  - hysteria2
+  - special
   use:
   - provider5
   url: https://cp.cloudflare.com/generate_204
@@ -204,7 +201,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider5:
-    url: https://www.goodbye360.com/sub
+    url: https://cf.goodbye360.com/sub
     type: http
     interval: 3600
     health-check:
