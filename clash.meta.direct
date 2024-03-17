@@ -187,7 +187,7 @@ proxy-providers:
       url: https://cp.cloudflare.com/generate_204
       interval: 300
   provider5:
-    url: https://cf.goodbye360.com/sub
+    url: https://www.goodbye360.com/sub
     type: http
     interval: 3600
     health-check:
