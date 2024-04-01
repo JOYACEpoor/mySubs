@@ -124,18 +124,18 @@ proxy-groups:
   - 免费优先
   - 付费优先
   - DIRECT
-- name: 免费优先
-  type: fallback
-  proxies:
-  - 免费节点
-  - 付费节点
-  url: https://cp.cloudflare.com/generate_204
-  interval: 70
 - name: 付费优先
   type: fallback
   proxies:
   - 付费节点
   - 免费节点
+  url: https://cp.cloudflare.com/generate_204
+  interval: 70
+- name: 免费优先
+  type: fallback
+  proxies:
+  - 免费节点
+  - 付费节点
   url: https://cp.cloudflare.com/generate_204
   interval: 70
 - name: 免费节点
