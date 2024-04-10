@@ -129,16 +129,18 @@ proxy-groups:
 - name: 付费节点
   type: fallback
   use:
-  - provider5
+  - provider1
   url: https://cp.cloudflare.com/generate_204
   interval: 60
 - name: 免费节点
   type: url-test
   use:
-  - provider1
   - provider2
   - provider3
   - provider4
+  - provider5
+  - provider6
+  - provider7
   url: https://cp.cloudflare.com/generate_204
   interval: 60
 
@@ -185,6 +187,14 @@ proxy-providers:
       interval: 300
   provider6:
     url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+  provider7:
+    url: https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt
     type: http
     interval: 3600
     health-check:
