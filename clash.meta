@@ -124,13 +124,13 @@ proxy-groups:
   - 付费节点
   - 免费节点
   - DIRECT
-  url: https://cp.cloudflare.com/generate_204
+  url: https://www.speedtest.net
   interval: 70
 - name: 付费节点
   type: fallback
   use:
   - provider1
-  url: https://cp.cloudflare.com/generate_204
+  url: https://www.speedtest.net
   interval: 60
 - name: 免费节点
   type: url-test
@@ -138,7 +138,7 @@ proxy-groups:
   - provider2
   - provider3
   - provider4
-  url: https://cp.cloudflare.com/generate_204
+  url: https://www.speedtest.net
   interval: 60
 
 proxy-providers:
@@ -148,7 +148,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.speedtest.net
       interval: 300
   provider2:
     url: https://raw.githubusercontent.com/xiyaowong/freeFQ/main/v2ray
@@ -156,7 +156,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.speedtest.net
       interval: 300
   provider3:
     url: https://raw.githubusercontent.com/freefq/free/master/v2
@@ -164,7 +164,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.speedtest.net
       interval: 300
   provider4:
     url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
@@ -172,7 +172,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.speedtest.net
       interval: 300
 
 rules:
