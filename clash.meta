@@ -1,56 +1,36 @@
-socks-port: 10808
-port: 10809
-mixed-port: 10810
+mode: rule
 redir-port: 10811
 tproxy-port: 1536
+mixed-port: 10810
+socks-port: 10808
+port: 10809
 allow-lan: true
-mode: Rule
-geodata-mode: true
-unified-delay: true
-log-level: silent
+log-level: info
 ipv6: true
+secret: ''
 external-controller: 0.0.0.0:9090
-external-ui: ./dashboard
-secret: ""
-tcp-concurrent: true
+geodata-mode: true
 enable-process: true
 find-process-mode: strict
-global-client-fingerprint: chrome
-
 geox-url:
-  geoip: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-  geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-  mmdb: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/country.mmdb"
-
-profile:
-  store-selected: true
-  store-fake-ip: true
-
-sniffer:
-  enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
-  override-destination: true
-  sniff:
-    TLS:
-      ports:
-      - 443
-      - 8443
-    HTTP:
-      ports:
-      - 80
-      - 8080-8880
-      override-destination: true
-
+  geoip: https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+  geosite: https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+  mmdb: https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/country.mmdb
 tun:
   enable: true
   stack: mixed
   dns-hijack:
-    - 'any:53'
-    - 'tcp://any:53'
+  - any:53
   auto-route: true
   auto-detect-interface: true
-
+  device: Meta
+  strict-route: true
+  mtu: 1500
+external-ui: ./dashboard
+global-client-fingerprint: chrome
+profile:
+  store-selected: true
+  store-fake-ip: true
 dns:
   enable: true
   listen: :1053
@@ -116,31 +96,23 @@ dns:
   - https://dnsforge.de/dns-query
   - https://doh.ffmuc.net/dns-query
   - https://doh.mullvad.net/dns-query
-
-proxy-groups:
-- name: PROXY
-  type: fallback
-  proxies:
-  - 付费节点
-  - 免费节点
-  - DIRECT
-  url: https://cf.goodbye360.com
-  interval: 70
-- name: 付费节点
-  type: fallback
-  use:
-  - provider1
-  url: https://cf.goodbye360.com
-  interval: 60
-- name: 免费节点
-  type: url-test
-  use:
-  - provider2
-  - provider3
-  - provider4
-  url: https://cf.goodbye360.com
-  interval: 60
-
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+tcp-concurrent: true
+unified-delay: true
 proxy-providers:
   provider1:
     url: https://cf.goodbye360.com/sub
@@ -174,29 +146,29 @@ proxy-providers:
       enable: true
       url: https://cf.goodbye360.com
       interval: 300
-
-rules:
-- PROCESS-NAME,steam,DIRECT
-- PROCESS-NAME,steam.exe,DIRECT
-- RULE-SET,reject,REJECT
-- RULE-SET,applications,DIRECT
-- DOMAIN,clash.razord.top,DIRECT
-- DOMAIN,yacd.haishan.me,DIRECT
-- RULE-SET,private,DIRECT
-- RULE-SET,icloud,DIRECT
-- RULE-SET,apple,DIRECT
-- RULE-SET,google,DIRECT
-- RULE-SET,direct,DIRECT
-- RULE-SET,lancidr,DIRECT
-- RULE-SET,cncidr,DIRECT
-- GEOIP,LAN,DIRECT
-- GEOIP,CN,DIRECT
-- RULE-SET,proxy,PROXY
-- RULE-SET,telegramcidr,PROXY
-- RULE-SET,tld-not-cn,PROXY
-- RULE-SET,gfw,PROXY
-- MATCH,PROXY
-
+proxy-groups:
+- name: PROXY
+  type: fallback
+  proxies:
+  - 付费节点
+  - 免费节点
+  - DIRECT
+  url: https://cf.goodbye360.com
+  interval: 70
+- name: 付费节点
+  type: fallback
+  use:
+  - provider1
+  url: https://cf.goodbye360.com
+  interval: 60
+- name: 免费节点
+  type: url-test
+  use:
+  - provider2
+  - provider3
+  - provider4
+  url: https://cf.goodbye360.com
+  interval: 60
 rule-providers:
   reject:
     type: http
@@ -276,3 +248,24 @@ rule-providers:
     url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
     path: ./ruleset/applications.yaml
     interval: 86400
+rules:
+- PROCESS-NAME,steam,DIRECT
+- PROCESS-NAME,steam.exe,DIRECT
+- RULE-SET,reject,REJECT
+- RULE-SET,applications,DIRECT
+- DOMAIN,clash.razord.top,DIRECT
+- DOMAIN,yacd.haishan.me,DIRECT
+- RULE-SET,private,DIRECT
+- RULE-SET,icloud,DIRECT
+- RULE-SET,apple,DIRECT
+- RULE-SET,google,DIRECT
+- RULE-SET,direct,DIRECT
+- RULE-SET,lancidr,DIRECT
+- RULE-SET,cncidr,DIRECT
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- RULE-SET,proxy,PROXY
+- RULE-SET,telegramcidr,PROXY
+- RULE-SET,tld-not-cn,PROXY
+- RULE-SET,gfw,PROXY
+- MATCH,PROXY
