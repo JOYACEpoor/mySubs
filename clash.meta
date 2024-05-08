@@ -152,7 +152,6 @@ proxy-groups:
   proxies:
   - 付费节点
   - 免费节点
-  - DIRECT
   url: https://cf.goodbye360.com
   interval: 70
 - name: 付费节点
