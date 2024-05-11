@@ -123,7 +123,7 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider2:
-    url: https://raw.githubusercontent.com/xiyaowong/freeFQ/main/v2ray
+    url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
     type: http
     interval: 3600
     health-check:
@@ -131,15 +131,7 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider3:
-    url: https://raw.githubusercontent.com/freefq/free/master/v2
-    type: http
-    interval: 3600
-    health-check:
-      enable: true
-      url: https://cf.goodbye360.com
-      interval: 300
-  provider4:
-    url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
+    url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
     type: http
     interval: 3600
     health-check:
@@ -165,7 +157,6 @@ proxy-groups:
   use:
   - provider2
   - provider3
-  - provider4
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
