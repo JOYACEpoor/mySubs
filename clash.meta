@@ -147,14 +147,6 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider5:
-    url: https://f.kxyz.eu.org/f.php?r=aHR0cHM6Ly9mLmt4eXouZXUub3JnL2ZjLnBocD90PTE3MTUyODI3MTY=
-    type: http
-    interval: 3600
-    health-check:
-      enable: true
-      url: https://cf.goodbye360.com
-      interval: 300
-  provider6:
     url: https://jiang.netlify.app
     type: http
     interval: 3600
@@ -166,10 +158,16 @@ proxy-groups:
 - name: PROXY
   type: fallback
   proxies:
-  - 免费节点
   - 付费节点
+  - 免费节点
   url: https://cf.goodbye360.com
   interval: 70
+- name: 付费节点
+  type: fallback
+  use:
+  - provider1
+  url: https://cf.goodbye360.com
+  interval: 60
 - name: 免费节点
   type: url-test
   use:
@@ -177,13 +175,6 @@ proxy-groups:
   - provider3
   - provider4
   - provider5
-  - provider6
-  url: https://cf.goodbye360.com
-  interval: 60
-- name: 付费节点
-  type: fallback
-  use:
-  - provider1
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
