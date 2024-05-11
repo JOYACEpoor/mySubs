@@ -131,7 +131,15 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider3:
-    url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
+    url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2https://9527521.xyz/pubconfig/InGlzyaEsu4xpOX7
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider4:
+    url: https://9527521.xyz/pubconfig/InGlzyaEsu4xpOX7
     type: http
     interval: 3600
     health-check:
@@ -142,8 +150,8 @@ proxy-groups:
 - name: PROXY
   type: fallback
   proxies:
-  - 付费节点
   - 免费节点
+  - 付费节点
   url: https://cf.goodbye360.com
   interval: 70
 - name: 付费节点
@@ -157,6 +165,7 @@ proxy-groups:
   use:
   - provider2
   - provider3
+  - provider4
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
