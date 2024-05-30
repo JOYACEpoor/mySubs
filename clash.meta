@@ -131,7 +131,7 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider3:
-    url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2https://9527521.xyz/pubconfig/InGlzyaEsu4xpOX7
+    url: https://jiang.netlify.app
     type: http
     interval: 3600
     health-check:
@@ -139,7 +139,7 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider4:
-    url: https://9527521.xyz/pubconfig/InGlzyaEsu4xpOX7https://f.kxyz.eu.org/f.php?r=aHR0cHM6Ly9mLmt4eXouZXUub3JnL2ZjLnBocD90PTE3MTUyODI3MTY=
+    url: https://server.fylink.link/api/public/sub/a40205edd0454a9090e0276f09b36009/FYLink
     type: http
     interval: 3600
     health-check:
@@ -147,7 +147,39 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider5:
-    url: https://jiang.netlify.app
+    url: https://sulian.life/api/v1/client/subscribe?token=23a8d487f5225e7c05af6d84c4a38a82
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider6:
+    url: https://oss.pithecia.com/api/v1/client/subscribe?token=70ab15ea34eeb32e953a2a13ff4e56fd
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider7:
+    url: https://qifei.today.elementfx.com/407129f7-ae44-4aba-b6d7-92fd0026d1a8
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider8:
+    url: https://ae86.235999.xyz/api/v1/client/subscribe?token=5212731fb930a0ea589c829af7dd7a81
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider9:
+    url: https://www.efcloud.bio/api/v1/client/subscribe?token=3b3ff37db126863d5a6f3e8c68d57129
     type: http
     interval: 3600
     health-check:
@@ -175,6 +207,10 @@ proxy-groups:
   - provider3
   - provider4
   - provider5
+  - provider6
+  - provider7
+  - provider8
+  - provider9
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
