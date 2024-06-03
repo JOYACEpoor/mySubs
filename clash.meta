@@ -120,7 +120,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider2:
     url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
@@ -128,7 +128,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider3:
     url: https://jiang.netlify.app
@@ -136,7 +136,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider4:
     url: https://server.fylink.link/api/public/sub/a40205edd0454a9090e0276f09b36009/FYLink
@@ -144,7 +144,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider5:
     url: https://sulian.life/api/v1/client/subscribe?token=23a8d487f5225e7c05af6d84c4a38a82
@@ -152,7 +152,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider6:
     url: https://oss.pithecia.com/api/v1/client/subscribe?token=70ab15ea34eeb32e953a2a13ff4e56fd
@@ -160,7 +160,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider7:
     url: https://qifei.today.elementfx.com/407129f7-ae44-4aba-b6d7-92fd0026d1a8
@@ -168,7 +168,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider8:
     url: https://ae86.235999.xyz/api/v1/client/subscribe?token=5212731fb930a0ea589c829af7dd7a81
@@ -176,7 +176,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
   provider9:
     url: https://www.efcloud.bio/api/v1/client/subscribe?token=3b3ff37db126863d5a6f3e8c68d57129
@@ -184,7 +184,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://cf.goodbye360.com
+      url: https://www.google.com/generate_204
       interval: 300
 proxy-groups:
 - name: PROXY
@@ -192,13 +192,13 @@ proxy-groups:
   proxies:
   - 付费节点
   - 免费节点
-  url: https://cf.goodbye360.com
+  url: https://www.google.com/generate_204
   interval: 70
 - name: 付费节点
   type: fallback
   use:
   - provider1
-  url: https://cf.goodbye360.com
+  url: https://www.google.com/generate_204
   interval: 60
 - name: 免费节点
   type: url-test
@@ -211,7 +211,7 @@ proxy-groups:
   - provider7
   - provider8
   - provider9
-  url: https://cf.goodbye360.com
+  url: https://www.google.com/generate_204
   interval: 60
 rule-providers:
   reject:
