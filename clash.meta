@@ -120,7 +120,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://google.hk/generate_204
+      url: https://cf.goodbye360.com
       interval: 300
   provider2:
     url: https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
@@ -128,7 +128,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      url: https://google.hk/generate_204
+      url: https://cf.goodbye360.com
       interval: 300
 proxy-groups:
 - name: PROXY
@@ -136,19 +136,19 @@ proxy-groups:
   proxies:
   - 付费节点
   - 免费节点
-  url: https://google.hk/generate_204
+  url: https://cf.goodbye360.com
   interval: 70
 - name: 付费节点
   type: fallback
   use:
   - provider1
-  url: https://google.hk/generate_204
+  url: https://cf.goodbye360.com
   interval: 60
 - name: 免费节点
   type: url-test
   use:
   - provider2
-  url: https://google.hk/generate_204
+  url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
   reject:
