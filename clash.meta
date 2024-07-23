@@ -17,7 +17,7 @@ geox-url:
   geosite: https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
   mmdb: https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/country.mmdb
 tun:
-  enable: true
+  enable: false
   stack: mixed
   dns-hijack:
   - any:53
