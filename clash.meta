@@ -46,7 +46,7 @@ profile: # 存储 select 选择记录
   # 持久化 fake-ip
   store-fake-ip: true
  
- proxy-providers:
+proxy-providers:
   provider1:
     url: https://cf.goodbye360.com/sub
     type: http
