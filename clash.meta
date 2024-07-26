@@ -60,8 +60,6 @@ proxy-groups:
   type: fallback
   use:
   - provider1
-  proxies:
-  - DIRECT
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
