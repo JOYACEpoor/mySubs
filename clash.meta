@@ -65,7 +65,7 @@ proxy-providers:
       interval: 300
 proxy-groups:
 - name: PROXY
-  type: fallback
+  type: select
   proxies:
   - 付费节点
   - 免费节点
