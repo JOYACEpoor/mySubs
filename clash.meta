@@ -25,7 +25,8 @@ ipv6: true # 开启 IPv6 总开关，关闭阻断所有 IPv6 链接和屏蔽 DNS
 
 external-controller: 0.0.0.0:9090 # RESTful API 监听地址
 
-# tcp-concurrent: true # TCP 并发连接所有 IP, 将使用最快握手的 TCP
+geodata-mode: true         #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
+tcp-concurrent: true # TCP 并发连接所有 IP, 将使用最快握手的 TCP
 
 # 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
 external-ui: ./ui
@@ -45,6 +46,27 @@ profile: # 存储 select 选择记录
 
   # 持久化 fake-ip
   store-fake-ip: true
+
+sniffer:                         #【Meta专属】sniffer域名嗅探器
+  enable: true                   #嗅探开关
+  sniffing:                      #嗅探协议对象：目前支持tls/http
+    - tls
+    - http
+  skip-domain:                   #列表中的sni字段，保留mapping结果，不通过嗅探还原域名
+                                 #优先级比force-domain高
+    - 'Mijia Cloud'              #米家设备，建议加
+    - 'dlg.io.mi.com'
+    - '+.apple.com'              #苹果域名，建议加
+  # - '*.baidu.com'              #支持通配符
+
+  force-domain:                  #需要强制嗅探的域名，默认只对IP嗅探
+  # - '+'                        #去掉注释后等于全局嗅探
+    - 'google.com'
+
+  #port-whitelist:               #端口白名单，只对名单内的端口进行还原域名
+  # - 80
+  # - 443
+  # - 8000-9000
 
 proxy-providers:
   provider1:
