@@ -67,21 +67,21 @@ proxy-groups:
 - name: PROXY
   type: fallback
   proxies:
-  - 免费节点
   - 付费节点
+  - 免费节点
   - DIRECT
   url: https://cf.goodbye360.com
   interval: 70
-- name: 免费节点
-  type: url-test
-  use:
-  - provider2
-  url: https://cf.goodbye360.com
-  interval: 60
 - name: 付费节点
   type: fallback
   use:
   - provider1
+  url: https://cf.goodbye360.com
+  interval: 60
+- name: 免费节点
+  type: url-test
+  use:
+  - provider2
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
