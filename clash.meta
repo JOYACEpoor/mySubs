@@ -186,7 +186,7 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 rules:
-- PROCESS-NAME,steam,DIRECT
+- PROCESS-NAME,steam_osx,DIRECT
 - PROCESS-NAME,steam.exe,DIRECT
 - RULE-SET,reject,REJECT
 - RULE-SET,applications,DIRECT
