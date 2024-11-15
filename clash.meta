@@ -85,31 +85,34 @@ proxy-providers:
       enable: true
       url: https://cf.goodbye360.com
       interval: 300
-proxies:
-- name: "查分用"
-  type: http
-  server: 20.2.128.3
-  port: 2560
+  provider3:
+    url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
 proxy-groups:
 - name: PROXY
-  type: select
+  type: fallback
   proxies:
-  - 付费节点
   - 免费节点
+  - 付费节点
   - DIRECT
-  - 查分用
   url: https://cf.goodbye360.com
   interval: 70
-- name: 付费节点
-  type: fallback
-  use:
-  - provider1
-  url: https://cf.goodbye360.com
-  interval: 60
 - name: 免费节点
   type: url-test
   use:
   - provider2
+  - provider3
+  url: https://cf.goodbye360.com
+  interval: 60
+- name: 付费节点
+  type: fallback
+  use:
+  - provider1
   url: https://cf.goodbye360.com
   interval: 60
 rule-providers:
