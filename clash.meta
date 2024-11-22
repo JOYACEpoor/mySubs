@@ -86,6 +86,14 @@ proxy-providers:
       url: https://cf.goodbye360.com
       interval: 300
   provider3:
+    url: https://jiang.netlify.app
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://cf.goodbye360.com
+      interval: 300
+  provider4:
     url: https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
     type: http
     interval: 3600
@@ -99,7 +107,6 @@ proxy-groups:
   proxies:
   - 免费节点
   - 付费节点
-  - DIRECT
   url: https://cf.goodbye360.com
   interval: 70
 - name: 免费节点
@@ -107,6 +114,7 @@ proxy-groups:
   use:
   - provider2
   - provider3
+  - provider4
   url: https://cf.goodbye360.com
   interval: 60
 - name: 付费节点
