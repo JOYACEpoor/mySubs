@@ -1,73 +1,59 @@
-mixed-port: 10810 # HTTP(S) 和 SOCKS 代理混合端口
-allow-lan: true # 允许局域网连接
-bind-address: "*" # 绑定 IP 地址，仅作用于 allow-lan 为 true，'*'表示所有地址
-find-process-mode: strict
-
 mode: rule
-
-#自定义 geodata url
-geox-url:
-  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb"
-
-geo-auto-update: true # 是否自动更新 geodata
-geo-update-interval: 24 # 更新间隔，单位：小时
-
-# Matcher implementation used by GeoSite, available implementations:
-# - succinct (default, same as rule-set)
-# - mph (from V2Ray, also `hybrid` in Xray)
+mixed-port: 10810
+allow-lan: true
+log-level: info
+ipv6: true
+external-controller: 0.0.0.0:9090
+secret: ''
+unified-delay: true
 geosite-matcher: mph
-
-log-level: info # 日志等级 silent/error/warning/info/debug
-
-ipv6: true # 开启 IPv6 总开关，关闭阻断所有 IPv6 链接和屏蔽 DNS 请求 AAAA 记录
-
-external-controller: 0.0.0.0:9090 # RESTful API 监听地址
-
-geodata-mode: true         #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
-tcp-concurrent: true # TCP 并发连接所有 IP, 将使用最快握手的 TCP
-
-# 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
 external-ui: ./ui
-external-ui-name: xd
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-
-# 全局 TLS 指纹，优先低于 proxy 内的 client-fingerprint
-# 可选： "chrome","firefox","safari","ios","random","none" options.
-# Utls is currently support TLS transport in TCP/grpc/WS/HTTP for VLESS/Vmess and trojan.
 global-client-fingerprint: chrome
-
-#  TCP keep alive interval
+external-ui-name: xd
+geo-update-interval: 24
+external-controller-cors:
+  allow-private-network: true
+  allow-origins:
+  - '*'
+sniffer:
+  enable: true
+  sniffing:
+  - tls
+  - http
+  skip-domain:
+  - Mijia Cloud
+  - dlg.io.mi.com
+  - +.apple.com
+  force-domain:
+  - google.com
+geo-auto-update: true
+dns:
+  use-system-hosts: false
+  enhanced-mode: redir-host
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+geodata-mode: true
+bind-address: '*'
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb
+find-process-mode: strict
 keep-alive-interval: 15
-
-profile: # 存储 select 选择记录
-  store-selected: false
-
-  # 持久化 fake-ip
+tcp-concurrent: true
+profile:
+  store-selected: true
   store-fake-ip: true
-
-sniffer:                         #【Meta专属】sniffer域名嗅探器
-  enable: true                   #嗅探开关
-  sniffing:                      #嗅探协议对象：目前支持tls/http
-    - tls
-    - http
-  skip-domain:                   #列表中的sni字段，保留mapping结果，不通过嗅探还原域名
-                                 #优先级比force-domain高
-    - 'Mijia Cloud'              #米家设备，建议加
-    - 'dlg.io.mi.com'
-    - '+.apple.com'              #苹果域名，建议加
-  # - '*.baidu.com'              #支持通配符
-
-  force-domain:                  #需要强制嗅探的域名，默认只对IP嗅探
-  # - '+'                        #去掉注释后等于全局嗅探
-    - 'google.com'
-
-  #port-whitelist:               #端口白名单，只对名单内的端口进行还原域名
-  # - 80
-  # - 443
-  # - 8000-9000
-
+tun:
+  stack: mixed
+  device: Meta
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+  - any:53
+  strict-route: true
+  mtu: 1500
+  enable: false
+proxies: []
 proxy-providers:
   provider1:
     url: https://cf.goodbye360.com/sub
