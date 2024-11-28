@@ -89,10 +89,11 @@ proxy-providers:
       interval: 300
 proxy-groups:
 - name: PROXY
-  type: fallback
+  type: select
   proxies:
   - 免费节点
   - 付费节点
+  - DIRECT
   url: https://cf.goodbye360.com
   interval: 70
 - name: 免费节点
